@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foliage — A Natural Living Journal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-bark-50 text-bark-900 font-sans antialiased">
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 bg-bark-50/90 backdrop-blur-sm border-b border-bark-200">
+    <nav class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+      <a href="#" class="flex items-center gap-2 group">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 4C14 4 8 9 8 16a6 6 0 0012 0c0-7-6-12-6-12z" fill="#55863d" opacity="0.85"/>
+          <path d="M14 10C14 10 10 14 10 18a4 4 0 008 0c0-4-4-8-4-8z" fill="#74a15d"/>
+          <line x1="14" y1="22" x2="14" y2="26" stroke="#55863d" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="font-serif text-xl font-medium text-bark-800 group-hover:text-moss-600 transition-colors">Foliage</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-bark-600">
+        <a href="#" class="nav-link hover:text-bark-900 transition-colors">Stories</a>
+        <a href="#" class="nav-link hover:text-bark-900 transition-colors">Garden</a>
+        <a href="#" class="nav-link hover:text-bark-900 transition-colors">Foraging</a>
+        <a href="#" class="nav-link hover:text-bark-900 transition-colors">Recipes</a>
+        <a href="#" class="nav-link hover:text-bark-900 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="hidden md:block text-bark-500 hover:text-bark-800 transition-colors" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <a href="#" class="text-xs font-medium bg-moss-600 text-white px-4 py-2 rounded-full hover:bg-moss-700 transition-colors">Subscribe</a>
+        <button class="md:hidden text-bark-600" id="menu-btn" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-bark-50 border-t border-bark-200 px-6 py-4 space-y-3 text-sm font-medium text-bark-700">
+      <a href="#" class="block hover:text-moss-600 transition-colors">Stories</a>
+      <a href="#" class="block hover:text-moss-600 transition-colors">Garden</a>
+      <a href="#" class="block hover:text-moss-600 transition-colors">Foraging</a>
+      <a href="#" class="block hover:text-moss-600 transition-colors">Recipes</a>
+      <a href="#" class="block hover:text-moss-600 transition-colors">About</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 pt-16 pb-12">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div data-animate data-delay="1">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="inline-block w-8 h-px bg-moss-400"></span>
+            <span class="text-xs uppercase tracking-widest text-moss-600 font-medium">Featured Story</span>
+          </div>
+          <h1 class="font-serif text-4xl md:text-5xl lg:text-[3.2rem] leading-[1.15] text-bark-900 mb-6">
+            The Hidden Language of <em class="text-moss-600 not-italic">Ancient Forests</em>
+          </h1>
+          <p class="text-bark-600 text-lg leading-relaxed mb-8 max-w-lg">
+            Beneath the leaf litter and tangled roots lies an invisible network — a wood-wide web of fungal threads that trees use to whisper, trade, and care for one another.
+          </p>
+          <div class="flex items-center gap-6">
+            <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-moss-700 border border-moss-300 rounded-full px-5 py-2.5 hover:bg-moss-50 transition-colors group">
+              Read the story
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div class="flex items-center gap-2 text-sm text-bark-500">
+              <img src="https://i.pravatar.cc/32?img=47" alt="Author" class="w-7 h-7 rounded-full object-cover" />
+              <span>Elara Woods · 12 min</span>
+            </div>
+          </div>
+        </div>
+        <div data-animate data-delay="2" class="relative hero-img-wrap rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-[480px]">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=900&q=85&auto=format&fit=crop" alt="Ancient forest with sunbeams" class="w-full h-full object-cover" loading="eager" />
+          <div class="absolute bottom-4 left-4 z-10">
+            <span class="tag-pill text-xs bg-bark-100/90 text-bark-700 backdrop-blur-sm px-3 py-1 rounded-full border border-bark-200 font-medium transition-colors cursor-pointer">Ecology</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Pills -->
+    <section class="max-w-6xl mx-auto px-6 py-6 border-y border-bark-200 overflow-x-auto">
+      <div class="flex items-center gap-2 min-w-max">
+        <span class="text-xs text-bark-400 uppercase tracking-widest mr-2">Browse</span>
+        <button class="tag-pill text-xs bg-moss-100 text-moss-800 border border-moss-200 px-4 py-1.5 rounded-full font-medium transition-colors cursor-pointer whitespace-nowrap hover:bg-moss-600 hover:text-white hover:border-moss-600">All</button>
+        <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-4 py-1.5 rounded-full font-medium transition-colors cursor-pointer whitespace-nowrap">Garden Life</button>
+        <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-4 py-1.5 rounded-full font-medium transition-colors cursor-pointer whitespace-nowrap">Wild Foraging</button>
+        <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-4 py-1.5 rounded-full font-medium transition-colors cursor-pointer whitespace-nowrap">Slow Recipes</button>
+        <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-4 py-1.5 rounded-full font-medium transition-colors cursor-pointer whitespace-nowrap">Seed Saving</button>
+        <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-4 py-1.5 rounded-full font-medium transition-colors cursor-pointer whitespace-nowrap">Ecology</button>
+        <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-4 py-1.5 rounded-full font-medium transition-colors cursor-pointer whitespace-nowrap">Herbalism</button>
+        <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-4 py-1.5 rounded-full font-medium transition-colors cursor-pointer whitespace-nowrap">Seasons</button>
+      </div>
+    </section>
+
+    <!-- Latest Posts - Mosaic Grid -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      <div class="flex items-baseline justify-between mb-10">
+        <h2 class="font-serif text-2xl text-bark-900">Recent Stories</h2>
+        <a href="#" class="text-sm text-moss-600 hover:text-moss-800 font-medium transition-colors">All stories →</a>
+      </div>
+
+      <!-- Mosaic -->
+      <div class="mosaic-grid gap-5">
+
+        <!-- Large card -->
+        <article class="card-hover rounded-xl overflow-hidden bg-white border border-bark-200 group" data-animate>
+          <div class="aspect-[3/4] md:aspect-auto md:h-full relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80&auto=format&fit=crop" alt="Garden" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bark-900/80 via-bark-900/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <span class="inline-block text-xs font-medium bg-moss-500/80 backdrop-blur-sm rounded-full px-3 py-1 mb-3">Garden Life</span>
+              <h3 class="font-serif text-xl md:text-2xl leading-snug mb-2">What a Garden Teaches You About Patience and Grace</h3>
+              <p class="text-bark-200 text-sm line-clamp-2">Every season is a conversation. The soil speaks and — if you are quiet enough — you will learn to listen back.</p>
+              <div class="flex items-center gap-2 mt-4 text-xs text-bark-300">
+                <img src="https://i.pravatar.cc/24?img=12" alt="" class="w-5 h-5 rounded-full" />
+                <span>Mira Solis · May 8 · 8 min read</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Small cards stack -->
+        <div class="flex flex-col gap-5">
+
+          <article class="card-hover rounded-xl overflow-hidden bg-white border border-bark-200 group flex" data-animate data-delay="1">
+            <div class="w-36 shrink-0 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=300&q=80&auto=format&fit=crop" alt="Mushrooms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            </div>
+            <div class="p-5 flex flex-col justify-between">
+              <div>
+                <span class="text-xs text-clay-600 font-medium">Wild Foraging</span>
+                <h3 class="font-serif text-base leading-snug mt-1 mb-2">A Beginner's Atlas to Woodland Mushrooms</h3>
+                <p class="text-bark-500 text-sm line-clamp-2">Know your chanterelle from your death cap. A field guide born from one too many close calls.</p>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-bark-400 mt-3">
+                <img src="https://i.pravatar.cc/24?img=33" alt="" class="w-5 h-5 rounded-full" />
+                <span>Theo Briar · 6 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-hover rounded-xl overflow-hidden bg-white border border-bark-200 group flex" data-animate data-delay="2">
+            <div class="w-36 shrink-0 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=300&q=80&auto=format&fit=crop" alt="Herbs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            </div>
+            <div class="p-5 flex flex-col justify-between">
+              <div>
+                <span class="text-xs text-moss-600 font-medium">Herbalism</span>
+                <h3 class="font-serif text-base leading-snug mt-1 mb-2">Nettle, Elderflower & Meadowsweet: Summer Tonics from the Hedgerow</h3>
+                <p class="text-bark-500 text-sm line-clamp-2">Three herbs, three infusions, one quietly extraordinary afternoon.</p>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-bark-400 mt-3">
+                <img src="https://i.pravatar.cc/24?img=21" alt="" class="w-5 h-5 rounded-full" />
+                <span>Ida Fern · 5 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-hover rounded-xl bg-moss-50 border border-moss-200 group p-5 relative overflow-hidden" data-animate data-delay="3">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-moss-200/40 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <span class="text-xs text-bark-500 font-medium">Slow Recipes</span>
+            <h3 class="font-serif text-base leading-snug mt-1 mb-2 text-bark-900">Wild Garlic & Rye Sourdough — A Spring Ritual</h3>
+            <p class="text-bark-500 text-sm line-clamp-3">The scent of wild garlic in a warm kitchen is its own kind of ceremony. Here is how we do it every April.</p>
+            <a href="#" class="inline-flex items-center gap-1 text-xs text-moss-700 font-medium mt-4 hover:gap-2 transition-all">
+              Read recipe
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Pull Quote / Divider -->
+    <section class="bg-moss-700 text-white py-16 px-6 overflow-hidden relative">
+      <div class="absolute left-8 top-1/2 -translate-y-1/2 quote-mark text-moss-500 pointer-events-none select-none" aria-hidden="true">"</div>
+      <div class="max-w-3xl mx-auto text-center relative z-10" data-animate>
+        <p class="font-serif text-2xl md:text-3xl italic leading-relaxed text-moss-100 mb-6">
+          To walk in a forest is to be reminded that everything is connected — the rain, the root, the worm, the wing.
+        </p>
+        <span class="text-moss-300 text-sm font-medium tracking-wider uppercase">Robin Wall Kimmerer — paraphrased</span>
+      </div>
+      <div class="absolute right-8 bottom-1/2 translate-y-1/2 quote-mark text-moss-500 rotate-180 pointer-events-none select-none" aria-hidden="true">"</div>
+    </section>
+
+    <!-- Three-column Articles -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      <div class="flex items-baseline justify-between mb-10">
+        <h2 class="font-serif text-2xl text-bark-900">From the Garden Journal</h2>
+        <a href="#" class="text-sm text-moss-600 hover:text-moss-800 font-medium transition-colors">See all →</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+
+        <article class="card-hover group" data-animate data-delay="1">
+          <div class="rounded-xl overflow-hidden aspect-video mb-4">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&q=80&auto=format&fit=crop" alt="Seeds" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <span class="text-xs text-bark-400 font-medium uppercase tracking-wider">Seed Saving</span>
+          <h3 class="font-serif text-lg leading-snug mt-2 mb-2 group-hover:text-moss-700 transition-colors">Saving Heirloom Seeds: A Living Archive in Your Kitchen Drawer</h3>
+          <p class="text-bark-500 text-sm leading-relaxed line-clamp-3">Seeds are memory made physical. Each one carries a lineage stretching back through centuries of careful human hands.</p>
+          <div class="flex items-center justify-between mt-4 text-xs text-bark-400">
+            <span>May 3, 2025</span>
+            <span>10 min read</span>
+          </div>
+        </article>
+
+        <article class="card-hover group" data-animate data-delay="2">
+          <div class="rounded-xl overflow-hidden aspect-video mb-4">
+            <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=500&q=80&auto=format&fit=crop" alt="Autumn forest" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <span class="text-xs text-bark-400 font-medium uppercase tracking-wider">Seasons</span>
+          <h3 class="font-serif text-lg leading-snug mt-2 mb-2 group-hover:text-moss-700 transition-colors">Why Autumn Asks You to Let Things Go</h3>
+          <p class="text-bark-500 text-sm leading-relaxed line-clamp-3">The trees have never apologized for losing their leaves. There is wisdom in that kind of willingness to release.</p>
+          <div class="flex items-center justify-between mt-4 text-xs text-bark-400">
+            <span>Apr 21, 2025</span>
+            <span>7 min read</span>
+          </div>
+        </article>
+
+        <article class="card-hover group" data-animate data-delay="3">
+          <div class="rounded-xl overflow-hidden aspect-video mb-4">
+            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=500&q=80&auto=format&fit=crop" alt="Bee on flower" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <span class="text-xs text-bark-400 font-medium uppercase tracking-wider">Ecology</span>
+          <h3 class="font-serif text-lg leading-snug mt-2 mb-2 group-hover:text-moss-700 transition-colors">The Pollinators We Forget: A Love Letter to Solitary Bees</h3>
+          <p class="text-bark-500 text-sm leading-relaxed line-clamp-3">They don't make honey or live in hives. But without them, much of what we eat simply wouldn't exist.</p>
+          <div class="flex items-center justify-between mt-4 text-xs text-bark-400">
+            <span>Apr 14, 2025</span>
+            <span>9 min read</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Article Spotlight — long read teaser -->
+    <section class="max-w-6xl mx-auto px-6 pb-16" data-animate>
+      <div class="bg-white border border-bark-200 rounded-2xl overflow-hidden">
+        <div class="grid md:grid-cols-5">
+          <div class="md:col-span-2 h-56 md:h-auto overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=80&auto=format&fit=crop" alt="Sunrise over meadow" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+          </div>
+          <div class="md:col-span-3 p-8 md:p-12 flex flex-col justify-center">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-xs font-bold uppercase tracking-widest text-clay-600 bg-clay-50 border border-clay-200 px-3 py-1 rounded-full">Long Read</span>
+              <span class="text-xs text-bark-400">35 min · Illustrated</span>
+            </div>
+            <h2 class="font-serif text-2xl md:text-3xl leading-snug text-bark-900 mb-4">
+              Rewilding Britain: One Field at a Time
+            </h2>
+            <p class="text-bark-600 leading-relaxed mb-6 text-[15px]">
+              Across the British Isles, a quiet revolution is taking root. Farmers are walking away from ploughs, landowners are fencing off their fields, and nature — given even the smallest opening — is flooding back in ways that surprise even the scientists who study it.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <img src="https://i.pravatar.cc/36?img=60" alt="Author" class="w-8 h-8 rounded-full border-2 border-bark-100" />
+                <div>
+                  <p class="text-sm font-medium text-bark-800">James Hawthorne</p>
+                  <p class="text-xs text-bark-400">Field Correspondent</p>
+                </div>
+              </div>
+              <a href="#" class="inline-flex items-center gap-2 text-sm font-medium bg-bark-900 text-white rounded-full px-5 py-2.5 hover:bg-bark-700 transition-colors group">
+                Begin reading
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-0.5 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="max-w-6xl mx-auto px-6 pb-20">
+      <div class="bg-bark-100 rounded-2xl px-8 md:px-16 py-14 text-center relative overflow-hidden" data-animate>
+        <!-- Decorative leaves -->
+        <svg class="absolute left-4 top-4 text-bark-300 opacity-30 pointer-events-none" width="80" height="80" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+          <path d="M10 70 Q20 10 70 10 Q30 30 30 70Z" fill="currentColor"/>
+        </svg>
+        <svg class="absolute right-4 bottom-4 text-moss-400 opacity-20 pointer-events-none rotate-180" width="80" height="80" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+          <path d="M10 70 Q20 10 70 10 Q30 30 30 70Z" fill="currentColor"/>
+        </svg>
+        <div class="relative z-10 max-w-lg mx-auto">
+          <div class="inline-flex items-center gap-1.5 text-xs font-medium text-moss-700 bg-moss-100 border border-moss-200 rounded-full px-4 py-1.5 mb-5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Weekly Letter
+          </div>
+          <h2 class="font-serif text-3xl text-bark-900 mb-3">The Weekly Growth</h2>
+          <p class="text-bark-600 text-sm leading-relaxed mb-7">
+            One story, one recipe, and one thing overheard in the garden — delivered every Sunday morning, quietly.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto" onsubmit="return false;">
+            <input type="email" placeholder="your@email.com" class="flex-1 rounded-full border border-bark-300 bg-white px-5 py-3 text-sm text-bark-800 placeholder-bark-400 focus:outline-none focus:ring-2 focus:ring-moss-400 focus:border-transparent" />
+            <button type="submit" class="bg-moss-600 text-white rounded-full px-6 py-3 text-sm font-medium hover:bg-moss-700 transition-colors whitespace-nowrap">Join us</button>
+          </form>
+          <p class="text-xs text-bark-400 mt-4">No ads, no noise. Unsubscribe any time.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-bark-200 bg-bark-100">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid md:grid-cols-4 gap-10 mb-10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-3">
+            <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M14 4C14 4 8 9 8 16a6 6 0 0012 0c0-7-6-12-6-12z" fill="#55863d" opacity="0.85"/><path d="M14 10C14 10 10 14 10 18a4 4 0 008 0c0-4-4-8-4-8z" fill="#74a15d"/><line x1="14" y1="22" x2="14" y2="26" stroke="#55863d" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="font-serif text-lg font-medium text-bark-800">Foliage</span>
+          </div>
+          <p class="text-bark-500 text-sm leading-relaxed max-w-xs">A journal about the natural world — growing, foraging, cooking, and paying close attention to what the earth is trying to say.</p>
+        </div>
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-widest text-bark-400 mb-4">Explore</h4>
+          <ul class="space-y-2 text-sm text-bark-600">
+            <li><a href="#" class="hover:text-moss-600 transition-colors">Garden Life</a></li>
+            <li><a href="#" class="hover:text-moss-600 transition-colors">Wild Foraging</a></li>
+            <li><a href="#" class="hover:text-moss-600 transition-colors">Slow Recipes</a></li>
+            <li><a href="#" class="hover:text-moss-600 transition-colors">Herbalism</a></li>
+            <li><a href="#" class="hover:text-moss-600 transition-colors">Seasons</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-widest text-bark-400 mb-4">Journal</h4>
+          <ul class="space-y-2 text-sm text-bark-600">
+            <li><a href="#" class="hover:text-moss-600 transition-colors">About Foliage</a></li>
+            <li><a href="#" class="hover:text-moss-600 transition-colors">Our Writers</a></li>
+            <li><a href="#" class="hover:text-moss-600 transition-colors">Write for us</a></li>
+            <li><a href="#" class="hover:text-moss-600 transition-colors">Newsletter</a></li>
+            <li><a href="#" class="hover:text-moss-600 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-bark-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-bark-400">© 2025 Foliage Journal. Made slowly, with care.</p>
+        <div class="flex items-center gap-4 text-xs text-bark-400">
+          <a href="#" class="hover:text-bark-600 transition-colors">Privacy</a>
+          <a href="#" class="hover:text-bark-600 transition-colors">Terms</a>
+          <a href="#" class="hover:text-bark-600 transition-colors">RSS</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./config.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
