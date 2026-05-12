@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Hidden Language of Ancient Forests — Foliage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* Reading progress bar */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; height: 2px;
+      background: #55863d; z-index: 100; width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* Nav underline */
+    .nav-link::after {
+      content: ''; display: block; width: 0; height: 1px;
+      background: #55863d; transition: width 0.3s;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Article prose */
+    .prose-article { font-family: 'Lora', Georgia, serif; font-size: 1.125rem; line-height: 1.9; color: #4c3935; }
+    .prose-article p { margin-bottom: 1.6rem; }
+    .prose-article h2 { font-size: 1.55rem; font-weight: 600; line-height: 1.3; color: #2c4322; margin: 2.8rem 0 1rem; font-family: 'Lora', serif; }
+    .prose-article h3 { font-size: 1.2rem; font-weight: 500; color: #345327; margin: 2rem 0 0.75rem; font-family: 'Lora', serif; }
+    .prose-article strong { font-weight: 600; color: #3c2e29; }
+    .prose-article em { font-style: italic; }
+    .prose-article a { color: #41692d; border-bottom: 1px solid #c5d9b8; text-decoration: none; transition: border-color 0.2s; }
+    .prose-article a:hover { border-color: #41692d; }
+
+    /* Drop cap */
+    .drop-cap::first-letter {
+      float: left; font-family: 'Lora', serif;
+      font-size: 4.5rem; line-height: 0.78;
+      padding-right: 0.12em; padding-top: 0.08em;
+      color: #55863d; font-weight: 600;
+    }
+
+    /* Blockquote */
+    .prose-article blockquote {
+      border-left: 3px solid #9dbf89;
+      margin: 2.5rem 0;
+      padding: 1rem 0 1rem 1.75rem;
+      font-style: italic;
+      color: #6e5145;
+      font-size: 1.2rem;
+      line-height: 1.75;
+    }
+    .prose-article blockquote cite {
+      display: block; margin-top: 0.75rem;
+      font-style: normal; font-size: 0.8rem;
+      font-family: 'DM Sans', sans-serif;
+      color: #9e7b5e; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+
+    /* Image caption */
+    .img-caption { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: #9e7b5e; text-align: center; margin-top: 0.6rem; font-style: italic; }
+
+    /* Tag pill */
+    .tag-pill { transition: background-color 0.2s, color 0.2s; }
+    .tag-pill:hover { background-color: #55863d !important; color: white !important; border-color: #55863d !important; }
+
+    /* Card hover */
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.07); }
+
+    /* Scroll reveal */
+    [data-animate] { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    [data-animate].in-view { opacity: 1; transform: none; }
+    [data-delay="1"] { transition-delay: 0.1s; }
+    [data-delay="2"] { transition-delay: 0.2s; }
+    [data-delay="3"] { transition-delay: 0.3s; }
+
+    /* Sticky sidebar TOC */
+    .toc-link { transition: color 0.2s, padding-left 0.2s; }
+    .toc-link.active { color: #41692d; padding-left: 0.5rem; border-left: 2px solid #55863d; }
+
+    /* Share button */
+    .share-btn { transition: background 0.2s, transform 0.15s; }
+    .share-btn:hover { transform: scale(1.08); }
+
+    /* Footnote marker */
+    .footnote-ref { font-size: 0.72rem; vertical-align: super; color: #55863d; font-family: 'DM Sans', sans-serif; font-weight: 500; cursor: default; }
+  </style>
+</head>
+<body class="bg-bark-50 text-bark-900 font-sans antialiased">
+
+  <!-- Reading progress -->
+  <div id="progress-bar" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 bg-bark-50/90 backdrop-blur-sm border-b border-bark-200">
+    <nav class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+          <path d="M14 4C14 4 8 9 8 16a6 6 0 0012 0c0-7-6-12-6-12z" fill="#55863d" opacity="0.85"/>
+          <path d="M14 10C14 10 10 14 10 18a4 4 0 008 0c0-4-4-8-4-8z" fill="#74a15d"/>
+          <line x1="14" y1="22" x2="14" y2="26" stroke="#55863d" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="font-serif text-xl font-medium text-bark-800 group-hover:text-moss-600 transition-colors">Foliage</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-bark-600">
+        <a href="#" class="nav-link hover:text-bark-900 transition-colors">Stories</a>
+        <a href="#" class="nav-link hover:text-bark-900 transition-colors">Garden</a>
+        <a href="#" class="nav-link hover:text-bark-900 transition-colors">Foraging</a>
+        <a href="#" class="nav-link hover:text-bark-900 transition-colors">Recipes</a>
+        <a href="#" class="nav-link hover:text-bark-900 transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="hidden md:block text-bark-500 hover:text-bark-800 transition-colors" aria-label="Search">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <a href="#" class="text-xs font-medium bg-moss-600 text-white px-4 py-2 rounded-full hover:bg-moss-700 transition-colors">Subscribe</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-6xl mx-auto px-6 pt-8 pb-2">
+      <nav class="flex items-center gap-2 text-xs text-bark-400 font-medium" aria-label="Breadcrumb">
+        <a href="index.html" class="hover:text-bark-700 transition-colors">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="#" class="hover:text-bark-700 transition-colors">Ecology</a>
+        <span aria-hidden="true">›</span>
+        <span class="text-bark-600 truncate max-w-xs">The Hidden Language of Ancient Forests</span>
+      </nav>
+    </div>
+
+    <!-- Article Header -->
+    <header class="max-w-3xl mx-auto px-6 pt-10 pb-8">
+      <div class="flex items-center gap-2 mb-5" data-animate>
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-moss-600 bg-moss-50 border border-moss-200 rounded-full px-3 py-1">Ecology</span>
+        <span class="text-bark-300 text-xs">·</span>
+        <span class="text-xs text-bark-400 font-medium">Long Read · 12 min</span>
+      </div>
+
+      <h1 class="font-serif text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.15] text-bark-900 mb-6" data-animate data-delay="1">
+        The Hidden Language of <em class="text-moss-600 not-italic">Ancient Forests</em>
+      </h1>
+
+      <p class="text-bark-600 text-lg md:text-xl leading-relaxed mb-8 font-serif font-normal italic" data-animate data-delay="2">
+        Beneath the leaf litter and tangled roots lies an invisible network — a wood-wide web of fungal threads that trees use to whisper, trade, and care for one another.
+      </p>
+
+      <!-- Author row -->
+      <div class="flex items-center justify-between flex-wrap gap-4 pb-8 border-b border-bark-200" data-animate data-delay="3">
+        <div class="flex items-center gap-3">
+          <img src="https://i.pravatar.cc/48?img=47" alt="Elara Woods" class="w-11 h-11 rounded-full object-cover border-2 border-bark-100 ring-1 ring-bark-200" />
+          <div>
+            <p class="text-sm font-medium text-bark-800">Elara Woods</p>
+            <p class="text-xs text-bark-400">Forest Ecologist & Writer · <a href="#" class="text-moss-600 hover:underline">View profile</a></p>
+          </div>
+        </div>
+        <div class="flex items-center gap-5 text-xs text-bark-400">
+          <span class="flex items-center gap-1.5">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            May 12, 2025
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            12 min read
+          </span>
+          <!-- Share -->
+          <div class="flex items-center gap-2 ml-2">
+            <button class="share-btn w-7 h-7 rounded-full bg-bark-200 hover:bg-moss-500 hover:text-white text-bark-600 flex items-center justify-center" aria-label="Share on X" title="Share on X">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.763l7.727-8.835L1.254 2.25H8.08l4.26 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+            </button>
+            <button class="share-btn w-7 h-7 rounded-full bg-bark-200 hover:bg-moss-500 hover:text-white text-bark-600 flex items-center justify-center" aria-label="Copy link" title="Copy link" id="copy-btn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="max-w-5xl mx-auto px-4 md:px-6 mb-4" data-animate>
+      <div class="rounded-2xl overflow-hidden aspect-[16/7]">
+        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1400&q=85&auto=format&fit=crop" alt="Ancient forest with sunbeams filtering through tall trees" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <p class="img-caption mt-3">Morning light filters through a centuries-old beech forest in the Białowieża Primeval Forest, Poland. Photo: Unsplash</p>
+    </div>
+
+    <!-- Article + Sidebar layout -->
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="grid lg:grid-cols-[1fr_260px] gap-12 items-start">
+
+        <!-- Article Body -->
+        <article id="article-body">
+          <div class="prose-article max-w-none">
+
+            <p class="drop-cap">There is a conversation happening beneath your feet. Right now, as you walk through a park or a forest, billions of fungal threads are carrying signals between trees — sugar and water and distress calls — through a network so intricate and efficient that scientists have begun calling it the internet of the forest. The trees, it turns out, are not the solitary competitors we imagined. They are, in many ways, profoundly social.</p>
+
+            <p>This discovery — still relatively young in the long annals of forest ecology — has upended centuries of thinking about how plants live and compete. The old model was Darwinian in a blunt sense: each tree for itself, fighting for light and water, the strongest canopy winning. What we are learning instead is something far stranger and more beautiful.</p>
+
+            <h2 id="mycelial-web">The Mycelial Web</h2>
+
+            <p>At the heart of this story is the mycorrhizal fungus — a word derived from the Greek <em>mykes</em> (fungus) and <em>rhiza</em> (root). These fungi form extraordinary partnerships with the roots of trees, extending far beyond what any single root system could reach. In exchange for sugars that trees produce through photosynthesis, the fungi provide trees with water, phosphorus, nitrogen, and other minerals they'd otherwise struggle to absorb.</p>
+
+            <p>But the partnership goes further than simple trade. The fungal threads — called hyphae — connect the roots of <strong>different trees</strong> across a forest floor, forming a continuous underground web. Through this web, trees can share resources. A large, sun-catching tree will pump sugars down through its roots and into the network, where they travel to a seedling struggling in the shade below.</p>
+
+            <blockquote>
+              "The forest is not a collection of individual trees — it is a community, with elders and young ones, strong and weak, and a network of relationships that we are only beginning to understand."
+              <cite>— Suzanne Simard, Forest Ecologist, UBC</cite>
+            </blockquote>
+
+            <p>The researcher most associated with this discovery is Suzanne Simard, a Canadian forest ecologist whose 1997 paper in <em>Nature</em> was among the first to demonstrate that trees exchange carbon through mycorrhizal networks. Her work showed that Douglas firs and paper birches — species that were considered competitors — were actually in constant dialogue, their fates intertwined through the soil.</p>
+
+            <!-- Inline image -->
+            <figure class="my-10 -mx-2 md:-mx-8">
+              <div class="rounded-xl overflow-hidden aspect-[16/9]">
+                <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=900&q=80&auto=format&fit=crop" alt="Close-up of tree roots and forest floor" class="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <figcaption class="img-caption">The forest floor is far more alive than it appears — a cubic metre of healthy soil can contain hundreds of kilometres of fungal threads. Photo: Unsplash</figcaption>
+            </figure>
+
+            <h2 id="mother-trees">The Mother Tree</h2>
+
+            <p>Simard coined the term "mother tree" to describe the largest, oldest trees in a forest — those that are most deeply embedded in the mycorrhizal network and most active in sharing resources. These trees, she found, send extra carbon to their own kin: seedlings that are genetically related to them receive more support than strangers.<span class="footnote-ref" title="Simard et al., 2015, Forest Ecology and Management">¹</span></p>
+
+            <p>When a mother tree is dying — stressed by disease, drought, or logging — she appears to increase the flow of carbon and defence signals to her seedlings and neighbours. It is as if, knowing her end is near, she pours what remains of herself into the network. The forest remembers her long after she falls.</p>
+
+            <p>This challenges us to think differently about tree felling. When we remove the oldest trees first — as many commercial forestry operations do, targeting the largest timber — we are not simply removing one tree. We are removing the hub of the network. The connections weaken. The young trees, deprived of the flow of resources and signals, grow more slowly and are more vulnerable to stress.</p>
+
+            <h2 id="forest-signals">Distress Signals and Chemical Warnings</h2>
+
+            <p>The wood-wide web carries more than sugar. Trees under attack from insects or pathogens release chemical signals — both through the air and through the root network — that alert their neighbours. The receiving trees begin producing defensive compounds before any pest has even arrived.</p>
+
+            <p>Willows attacked by caterpillars, for instance, increase the tannin content in their leaves — making them harder to digest. Nearby willows not yet under attack do the same, apparently in response to airborne volatile compounds released by their stressed neighbours. Similar responses have been documented in dozens of species.</p>
+
+            <!-- Pull quote -->
+            <div class="my-10 border-l-4 border-moss-300 pl-6 py-1">
+              <p class="font-serif text-xl italic text-bark-700 leading-relaxed">The forest is not a collection of individual trees. It is a community with elders and young ones — and a communication system as old as the land itself.</p>
+            </div>
+
+            <p>What is still debated among scientists is whether this constitutes something like <em>intention</em>. Are trees choosing to share? Are they aware, in any meaningful sense, of the network they inhabit? Most ecologists are careful here, resisting the pull of anthropomorphism. But the behaviours are real, documented, and reproducible. The forest acts, in many ways, as a single organism.</p>
+
+            <h2 id="what-this-means">What This Means for Us</h2>
+
+            <p>These findings have begun to filter into forestry practice and conservation policy, though slowly. Some forest managers now argue for leaving old trees standing as "legacy trees" — anchors for the mycorrhizal network that allow it to persist and regenerate after disturbance. Others advocate for preserving the full range of tree species in a forest, since different species host different fungal networks, and diversity strengthens the system as a whole.</p>
+
+            <p>For those of us who are not foresters, this knowledge offers something different: a new way of being in a forest. To walk among old trees knowing they are in conversation changes the experience. The silence is not absence. It is a language you cannot hear.</p>
+
+            <p>Stand still long enough, and you might feel it anyway — that sense of something deep and unhurried moving beneath you. That is the forest, going about its ancient business. Feeding its young. Caring for its sick. Remembering its dead.</p>
+
+            <!-- Footnotes -->
+            <div class="mt-12 pt-6 border-t border-bark-200 text-xs text-bark-400 font-sans leading-relaxed">
+              <p class="font-medium text-bark-500 mb-2">References</p>
+              <p>¹ Simard, S.W. et al. (2015). "Resource transfer between plants through ectomycorrhizal fungal networks." <em>Forest Ecology and Management</em>, 352, 14–20.</p>
+            </div>
+
+          </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 mt-10 pt-8 border-t border-bark-200">
+            <span class="text-xs text-bark-400 self-center mr-1 font-medium">Tagged:</span>
+            <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-3 py-1.5 rounded-full font-medium cursor-pointer">Ecology</button>
+            <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-3 py-1.5 rounded-full font-medium cursor-pointer">Forests</button>
+            <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-3 py-1.5 rounded-full font-medium cursor-pointer">Mycology</button>
+            <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-3 py-1.5 rounded-full font-medium cursor-pointer">Nature Science</button>
+            <button class="tag-pill text-xs bg-bark-100 text-bark-700 border border-bark-200 px-3 py-1.5 rounded-full font-medium cursor-pointer">Conservation</button>
+          </div>
+
+          <!-- Author Bio Card -->
+          <div class="mt-10 bg-white border border-bark-200 rounded-2xl p-6 flex gap-5 items-start" data-animate>
+            <img src="https://i.pravatar.cc/72?img=47" alt="Elara Woods" class="w-16 h-16 rounded-full object-cover border-2 border-bark-100 shrink-0" />
+            <div>
+              <p class="font-medium text-bark-800 text-base mb-0.5">Elara Woods</p>
+              <p class="text-xs text-moss-600 font-medium mb-2 uppercase tracking-wider">Forest Ecologist & Writer</p>
+              <p class="text-sm text-bark-500 leading-relaxed">Elara has spent fifteen years studying boreal forests in Canada and old-growth woodlands in Europe. She writes about the ecology of belonging — how living systems hold together, and what we lose when they don't.</p>
+              <a href="#" class="inline-flex items-center gap-1 text-xs text-moss-700 font-medium mt-3 hover:text-moss-900 transition-colors">
+                More from Elara →
+              </a>
+            </div>
+          </div>
+
+          <!-- Comments teaser -->
+          <div class="mt-10 bg-bark-100 rounded-2xl p-6 text-center" data-animate>
+            <p class="font-serif text-lg text-bark-800 mb-1">Join the conversation</p>
+            <p class="text-sm text-bark-500 mb-4">3 readers have shared their thoughts on this piece.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-sm font-medium bg-moss-600 text-white px-5 py-2.5 rounded-full hover:bg-moss-700 transition-colors">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Read comments
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sticky Sidebar -->
+        <aside class="hidden lg:block space-y-6" id="sidebar">
+
+          <!-- Table of Contents -->
+          <div class="bg-white border border-bark-200 rounded-xl p-5 sticky top-24">
+            <p class="text-xs font-semibold uppercase tracking-widest text-bark-400 mb-4">In this story</p>
+            <nav class="space-y-2" id="toc" aria-label="Table of contents">
+              <a href="#mycelial-web" class="toc-link block text-sm text-bark-600 hover:text-moss-600 py-1 pl-0 transition-all leading-snug">The Mycelial Web</a>
+              <a href="#mother-trees" class="toc-link block text-sm text-bark-600 hover:text-moss-600 py-1 pl-0 transition-all leading-snug">The Mother Tree</a>
+              <a href="#forest-signals" class="toc-link block text-sm text-bark-600 hover:text-moss-600 py-1 pl-0 transition-all leading-snug">Distress Signals & Warnings</a>
+              <a href="#what-this-means" class="toc-link block text-sm text-bark-600 hover:text-moss-600 py-1 pl-0 transition-all leading-snug">What This Means for Us</a>
+            </nav>
+
+            <div class="mt-5 pt-5 border-t border-bark-100">
+              <p class="text-xs text-bark-400 mb-3 font-medium">Share this story</p>
+              <div class="flex gap-2">
+                <button class="share-btn flex-1 py-2 rounded-lg bg-bark-100 hover:bg-moss-500 hover:text-white text-bark-600 text-xs font-medium transition-colors flex items-center justify-center gap-1.5" aria-label="Copy link" id="copy-btn-sidebar">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  Copy link
+                </button>
+                <button class="share-btn flex-1 py-2 rounded-lg bg-bark-100 hover:bg-moss-500 hover:text-white text-bark-600 text-xs font-medium transition-colors flex items-center justify-center gap-1.5" aria-label="Share on X">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.763l7.727-8.835L1.254 2.25H8.08l4.26 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+                  Post on X
+                </button>
+              </div>
+            </div>
+
+            <!-- Reading progress indicator -->
+            <div class="mt-5 pt-4 border-t border-bark-100">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs text-bark-400">Progress</span>
+                <span class="text-xs text-moss-600 font-medium" id="progress-text">0%</span>
+              </div>
+              <div class="h-1 bg-bark-100 rounded-full overflow-hidden">
+                <div id="progress-fill" class="h-full bg-moss-400 rounded-full transition-all duration-200" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter mini -->
+          <div class="bg-moss-700 rounded-xl p-5 text-white">
+            <p class="font-serif text-base mb-1">The Weekly Growth</p>
+            <p class="text-moss-200 text-xs leading-relaxed mb-4">One story, one recipe, one thing overheard in the garden. Every Sunday.</p>
+            <input type="email" placeholder="your@email.com" class="w-full rounded-lg bg-moss-800/60 border border-moss-500/50 px-3 py-2 text-xs text-white placeholder-moss-300 focus:outline-none focus:ring-1 focus:ring-moss-300 mb-2" />
+            <button class="w-full text-xs font-medium bg-white text-moss-800 rounded-lg py-2 hover:bg-moss-50 transition-colors">Subscribe free</button>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- More Articles -->
+    <section class="bg-white border-t border-bark-200 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-baseline justify-between mb-10">
+          <h2 class="font-serif text-2xl text-bark-900">You might also like</h2>
+          <a href="index.html" class="text-sm text-moss-600 hover:text-moss-800 font-medium transition-colors">All stories →</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-7">
+
+          <article class="card-hover group" data-animate data-delay="1">
+            <div class="rounded-xl overflow-hidden aspect-video mb-4">
+              <img src="https://images.unsplash.com/photo-1563299796-b729d83b7054?w=500&q=80&auto=format&fit=crop" alt="Mushrooms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+            <span class="text-xs text-clay-600 font-medium uppercase tracking-wider">Wild Foraging</span>
+            <h3 class="font-serif text-lg leading-snug mt-2 mb-2 group-hover:text-moss-700 transition-colors">A Beginner's Atlas to Woodland Mushrooms</h3>
+            <p class="text-bark-500 text-sm leading-relaxed line-clamp-2">Know your chanterelle from your death cap — a field guide born from one too many close calls.</p>
+            <div class="flex items-center gap-2 mt-4 text-xs text-bark-400">
+              <img src="https://i.pravatar.cc/24?img=33" alt="" class="w-5 h-5 rounded-full" />
+              <span>Theo Briar · 6 min</span>
+            </div>
+          </article>
+
+          <article class="card-hover group" data-animate data-delay="2">
+            <div class="rounded-xl overflow-hidden aspect-video mb-4">
+              <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=500&q=80&auto=format&fit=crop" alt="Autumn forest" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+            <span class="text-xs text-bark-400 font-medium uppercase tracking-wider">Seasons</span>
+            <h3 class="font-serif text-lg leading-snug mt-2 mb-2 group-hover:text-moss-700 transition-colors">Why Autumn Asks You to Let Things Go</h3>
+            <p class="text-bark-500 text-sm leading-relaxed line-clamp-2">The trees have never apologized for losing their leaves. There is wisdom in that willingness to release.</p>
+            <div class="flex items-center gap-2 mt-4 text-xs text-bark-400">
+              <img src="https://i.pravatar.cc/24?img=21" alt="" class="w-5 h-5 rounded-full" />
+              <span>Ida Fern · 5 min</span>
+            </div>
+          </article>
+
+          <article class="card-hover group" data-animate data-delay="3">
+            <div class="rounded-xl overflow-hidden aspect-video mb-4">
+              <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&q=80&auto=format&fit=crop" alt="Garden" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+            <span class="text-xs text-moss-600 font-medium uppercase tracking-wider">Garden Life</span>
+            <h3 class="font-serif text-lg leading-snug mt-2 mb-2 group-hover:text-moss-700 transition-colors">What a Garden Teaches You About Patience and Grace</h3>
+            <p class="text-bark-500 text-sm leading-relaxed line-clamp-2">Every season is a conversation. The soil speaks and, if you're quiet enough, you learn to listen back.</p>
+            <div class="flex items-center gap-2 mt-4 text-xs text-bark-400">
+              <img src="https://i.pravatar.cc/24?img=12" alt="" class="w-5 h-5 rounded-full" />
+              <span>Mira Solis · 8 min</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-bark-200 bg-bark-100">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 4C14 4 8 9 8 16a6 6 0 0012 0c0-7-6-12-6-12z" fill="#55863d" opacity="0.85"/><path d="M14 10C14 10 10 14 10 18a4 4 0 008 0c0-4-4-8-4-8z" fill="#74a15d"/></svg>
+          <span class="font-serif text-base font-medium text-bark-700">Foliage</span>
+        </div>
+        <p class="text-xs text-bark-400">© 2025 Foliage Journal. Made slowly, with care.</p>
+        <div class="flex items-center gap-4 text-xs text-bark-400">
+          <a href="#" class="hover:text-bark-600 transition-colors">Privacy</a>
+          <a href="#" class="hover:text-bark-600 transition-colors">Terms</a>
+          <a href="index.html" class="hover:text-bark-600 transition-colors">← Back to journal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./config.js"></script>
+  <script>
+    // Reading progress
+    const progressBar = document.getElementById('progress-bar');
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+    const article = document.getElementById('article-body');
+
+    window.addEventListener('scroll', () => {
+      const rect = article.getBoundingClientRect();
+      const articleHeight = article.offsetHeight;
+      const scrolled = Math.max(0, -rect.top);
+      const pct = Math.min(100, Math.round((scrolled / (articleHeight - window.innerHeight)) * 100));
+      const p = isNaN(pct) ? 0 : Math.max(0, pct);
+      progressBar.style.width = p + '%';
+      if (progressFill) progressFill.style.width = p + '%';
+      if (progressText) progressText.textContent = p + '%';
+    }, { passive: true });
+
+    // TOC active state
+    const headings = document.querySelectorAll('#article-body h2[id]');
+    const tocLinks = document.querySelectorAll('#toc .toc-link');
+    const ioOptions = { rootMargin: '-20% 0px -70% 0px' };
+    const headingObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`#toc a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, ioOptions);
+    headings.forEach(h => headingObserver.observe(h));
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) { el.target.classList.add('in-view'); observer.unobserve(el.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+    // Copy link
+    const copyBtns = document.querySelectorAll('#copy-btn, #copy-btn-sidebar');
+    copyBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          const orig = btn.innerHTML;
+          btn.textContent = '✓ Copied!';
+          setTimeout(() => { btn.innerHTML = orig; }, 2000);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
